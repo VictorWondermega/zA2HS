@@ -20,7 +20,7 @@ function zA2HS(za,a,n) {
 
 	///////////////////////////////
 	// ini
-	this.za.msg('dbg','zA2HS','i am '+this.n+'(zA2HS)');
+	// this.za.msg('dbg','zA2HS','i am '+this.n+'(zA2HS)');
 
     var deferredPrompt;
     var installBtn = document.getElementById('btn-install');
@@ -69,6 +69,26 @@ function zA2HS(za,a,n) {
     }
 
 };
+
+    function installApp(){
+        console.log(':)', 'butInstall-clicked');
+        var promptEvent = deferredPrompt;
+        if (!promptEvent) {
+            // The deferred prompt isn't available.
+            return;
+        }
+        // Show the install prompt.
+        promptEvent.prompt();
+        // Log the result
+        promptEvent.userChoice.then((result) => {
+            console.log(':)', 'userChoice', result);
+            // Reset the deferred prompt variable, since
+            // prompt() can only be called once.
+           deferredPrompt = null;
+            // Hide the install button.
+            installBtn.style.display = 'block';
+        });
+    }
 
 ////////////////////////////////////////////////////////////////
 if(typeof(zlo)=='object') {
