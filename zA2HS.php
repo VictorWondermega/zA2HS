@@ -17,7 +17,7 @@ class zA2HS {
 		$vis = $this->za->mm('vis');
 		if($vis) {
 
-			$vis[0]['page']['hdr']['js'][] = '/za/zA2HS/zA2HS.js';
+			$vis[0]['page']['hdr']['js'][] = '/'.$this->bs.'/zA2HS/zA2HS.js';
 			
 			if(isset($vrs['serviceWorker.js'])) { 
 				header('content-type:application/javascript');
@@ -40,6 +40,7 @@ class zA2HS {
 
 		$this->cd = realpath( __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR );
 		$this->dd = DIRECTORY_SEPARATOR;
+		$this->bs = explode($this->dd,$this->cd); $this->bs = end($this->bs);
 
 // exit($this->za->cd);
 
