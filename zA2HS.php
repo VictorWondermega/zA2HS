@@ -17,7 +17,7 @@ class zA2HS {
 		$vis = $this->za->mm('vis');
 		if($vis) {
 
-			$vis[0]['page']['hdr']['js'][] = '/'.$this->bs.'/zA2HS/zA2HS.js';
+			$vis[0]['page']['hdr']['js'][] = '/'.$this->bs.'/zA2HS/zA2HS.js?'.filemtime($this->cd.$this->dd.'zA2HS'.$this->dd.'zA2HS.js');
 			
 			if(isset($vrs['serviceWorker.js'])) { 
 				header('content-type:application/javascript');
