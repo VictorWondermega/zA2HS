@@ -7,6 +7,12 @@ namespace za\zA2HS;
 
 class zA2HS {
 	/* Zagata.Add to Homescreen */
+	private $za = null;
+	public $n = '';
+
+	public $cd = '';
+	public $dd = '/';
+	public $bs = '';
 
 	///////////////////////////////
 	// funcs
